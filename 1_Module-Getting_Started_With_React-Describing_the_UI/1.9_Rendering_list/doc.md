@@ -13,5 +13,4 @@ const listItems = chemists.map(person => { // Curly brace
   return <li>...</li>;
 });
 ```
-- 
 
