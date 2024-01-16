@@ -1,5 +1,11 @@
 # Tic-Tac-Toe Game:
 
+## Project analysis:
+**Game**
+- -> Board:
+        -> Square
+- -> History: 
+
 ## Notes:
 - **There are some rules when you are going to do a project:**
 1. **Requirement Analysis:** When we have project requirement we will analysis it before jump into coding.
