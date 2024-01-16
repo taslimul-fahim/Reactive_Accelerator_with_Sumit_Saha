@@ -3,7 +3,7 @@ import { useState } from "react";
 function Square({ value, onSquareClick }) {
   return (
     <button
-      className="h-12 w-12 border border-gray-400 m-3 font-bold text-lg"
+      className="bg-white border border-gray-400 h-12 w-12 m-1 leading-9 text-lg"
       onClick={onSquareClick}
     >
       {value}
@@ -15,13 +15,13 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
-    const newSquare = squares.slice();
-    newSquare[i] = "X";
-    setSquares(newSquare);
+    const nextSquares = squares.slice();
+    nextSquares[i] = "X";
+    setSquares(nextSquares);
   }
 
   return (
-    <div>
+    <>
       <div className="flex">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -37,6 +37,6 @@ export default function Board() {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
-    </div>
+    </>
   );
 }
