@@ -17,6 +17,3 @@ function addElement() {
   newElement.textContent = "DotNet";
   list.appendChild(newElement);
 }
-
-// Event Propagation
-
