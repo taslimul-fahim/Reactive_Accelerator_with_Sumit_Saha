@@ -80,6 +80,20 @@ function updateDOM() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let nextButton = document.getElementById("nextButton");
 let header = document.getElementById("header");
 let moreButton = document.getElementById("moreButton");
