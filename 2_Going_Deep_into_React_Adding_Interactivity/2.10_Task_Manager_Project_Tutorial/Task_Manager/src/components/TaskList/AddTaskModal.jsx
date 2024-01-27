@@ -1,4 +1,14 @@
+import { useState } from "react";
+
 const AddTaskModal = () => {
+  const [task, setTask] = useState({
+    title: "",
+    description: "",
+    tags: [],
+    priority: "",
+    isFavorite: false,
+  });
+
   return (
     <>
       <div className="bg-black bg-opacity-70 h-full w-full z-10 absolute top-0 left-0"></div>
@@ -15,6 +25,7 @@ const AddTaskModal = () => {
               type="text"
               name="title"
               id="title"
+              value={task.title}
               required
             />
           </div>
@@ -25,6 +36,7 @@ const AddTaskModal = () => {
               type="text"
               name="description"
               id="description"
+              value={task.description}
               required
             ></textarea>
           </div>
@@ -36,6 +48,7 @@ const AddTaskModal = () => {
                 type="text"
                 name="tags"
                 id="tags"
+                value={task.tags}
                 required
               />
             </div>
@@ -45,6 +58,7 @@ const AddTaskModal = () => {
                 className="block w-full cursor-pointer rounded-md bg-[#2D323F] px-3 py-2.5"
                 name="priority"
                 id="priority"
+                value={task.priority}
                 required
               >
                 <option value="">Select Priority</option>
