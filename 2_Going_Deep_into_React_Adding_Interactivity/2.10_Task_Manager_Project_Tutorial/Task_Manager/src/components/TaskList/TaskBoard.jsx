@@ -19,7 +19,6 @@ const TaskBoard = () => {
   const [taskToUpdate, setTaskToUpdate] = useState(null);
 
   function handleAddEditTask(newTask, isAdd) {
-    event.preventDefault();
     if (isAdd) {
       setTask([...tasks, newTask]);
     } else {
