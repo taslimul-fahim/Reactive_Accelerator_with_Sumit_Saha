@@ -20,4 +20,7 @@
 
 - **StroyBooks:** It's like a playground for React components. It helps developers build and test components in isolation, making it easier to see how they look and behave in different states or scenarios. It's a handy tool for creating and showcasing UI components during the development process.
 
-## 3.3 -
+## 3.3 - Thinking about UI declaratively in React - Finalize React states & Connect Event Handlers
+
+- **Controlled Input:** A controlled input in React is a form element whose value is managed by React's state, allowing for precise control and dynamic updates based on application state.
+- **Uncontrolled Input:** In React, an uncontrolled form input is a component where the input value is not controlled by React's state, but rather by the DOM, making it simpler but less controlled than a controlled input.
