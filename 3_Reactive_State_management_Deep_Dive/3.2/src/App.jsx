@@ -1,14 +1,16 @@
-import Form from "./components/Form";
-import "./styles.css";
+import Form from "./components/Form.jsx";
 
-function App() {
+let statuses = ["empty", "typing", "submitting", "success", "error"];
+
+export default function App() {
   return (
-    <div>
-      <h2>City quiz</h2>
-      <p>What city is located on two continents?</p>
-      <Form status={"error"} />
-    </div>
+    <>
+      {statuses.map((status) => (
+        <section key={status}>
+          <h4>Form ({status}):</h4>
+          <Form status={status} />
+        </section>
+      ))}
+    </>
   );
 }
-
-export default App;

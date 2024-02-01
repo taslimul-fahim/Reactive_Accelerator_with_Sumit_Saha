@@ -1,25 +1,20 @@
-/* eslint-disable react/prop-types */
-const Form = ({ status = "empty" }) => {
-  // visual status: empty, typing, submitting, success, error
-  if (status === "empty") return <h1>That's right!</h1>;
-
+export default function Form({ status }) {
+  if (status === "success") {
+    return <h1>That's right!</h1>;
+  }
   return (
     <>
       <form>
-        <textarea
-          className="border"
-          disabled={status === "submitting"}
-        ></textarea>
+        <textarea className="border" disabled={status === "submitting"} />
         <br />
-        <button disabled={status === "submitting" || status === "empty"}>
+        <button disabled={status === "empty" || status === "submitting"}>
           Submit
         </button>
-        {status === "submitting" && <p>Loading...</p>}
-
-        {status === "error" && <p className="Error">error</p>}
+        {status === "error" && (
+          <p className="Error">Good guess but a wrong answer. Try again!</p>
+        )}
       </form>
+      <hr />
     </>
   );
-};
-
-export default Form;
+}
