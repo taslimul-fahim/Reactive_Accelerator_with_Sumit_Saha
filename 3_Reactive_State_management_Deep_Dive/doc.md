@@ -31,4 +31,5 @@
 - Remove non-essential state to avoid bugs and paradoxes.
 - Connect the event handlers to set state.
 
-## 
+## 3.4 - Choosing the State Structure - Group related state
+- 
