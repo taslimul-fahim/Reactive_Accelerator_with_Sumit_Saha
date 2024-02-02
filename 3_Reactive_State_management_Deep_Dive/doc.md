@@ -24,3 +24,11 @@
 
 - **Controlled Input:** A controlled input in React is a form element whose value is managed by React's state, allowing for precise control and dynamic updates based on application state.
 - **Uncontrolled Input:** In React, an uncontrolled form input is a component where the input value is not controlled by React's state, but rather by the DOM, making it simpler but less controlled than a controlled input.
+### When developing a component:
+- Identify all its visual states.
+- Determine the human and computer triggers for state changes.
+- Model the state with useState.
+- Remove non-essential state to avoid bugs and paradoxes.
+- Connect the event handlers to set state.
+
+## 
