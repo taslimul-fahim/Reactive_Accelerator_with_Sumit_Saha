@@ -24,11 +24,30 @@
 
 - **Controlled Input:** A controlled input in React is a form element whose value is managed by React's state, allowing for precise control and dynamic updates based on application state.
 - **Uncontrolled Input:** In React, an uncontrolled form input is a component where the input value is not controlled by React's state, but rather by the DOM, making it simpler but less controlled than a controlled input.
+
 ### When developing a component:
+
 - Identify all its visual states.
 - Determine the human and computer triggers for state changes.
 - Model the state with useState.
 - Remove non-essential state to avoid bugs and paradoxes.
 - Connect the event handlers to set state.
 
-## 3.6 - 
+## 3.6 - Choosing the State Structure - Avoid redundant state:
+
+- **Derived State / Calculated state:** Derived state in React means calculating certain values based on existing state or props, instead of storing them separately. It helps keep things simple by computing values on the fly when required. example bellow:
+
+```
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+  }
+
+  const fullName = firstName + " " + lastName;
+```
