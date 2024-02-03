@@ -69,4 +69,4 @@ function Message({ messageColor }) {
 
 ## 3.8 - Choosing the State Structure - Avoid deeply nested state:
 
-- 
+- **Normalization or flattening:** In programming it means organizing data in a structured and simplified way. It involves breaking down complex data structures into simpler, more manageable formats to make it easier to work with and understand.
