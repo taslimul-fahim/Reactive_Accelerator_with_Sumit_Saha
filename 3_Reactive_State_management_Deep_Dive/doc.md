@@ -51,3 +51,20 @@
 
   const fullName = firstName + " " + lastName;
 ```
+
+- **Don’t mirror props in state like bellow:** mirroring is ok if your props not gonna change form parent.
+
+```
+function Message({ messageColor }) {
+  const [color, setColor] = useState(messageColor)}
+```
+
+- If you want to give it a shorter name, use a constant: This way it won’t get out of sync with the prop passed from the parent component. like bellow:
+
+```
+function Message({ messageColor }) {
+  const color = messageColor}
+
+```
+
+## 
