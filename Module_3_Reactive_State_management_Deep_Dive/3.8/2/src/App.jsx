@@ -1,7 +1,9 @@
+import TravelPlan from "./components/TravelPlan";
+
 function App() {
   return (
     <>
-      <h1>Hello!</h1>
+      <TravelPlan />
     </>
   );
 }
