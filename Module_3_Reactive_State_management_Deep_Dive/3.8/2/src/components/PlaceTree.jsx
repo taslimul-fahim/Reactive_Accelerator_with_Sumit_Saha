@@ -1,16 +1,26 @@
-const PlaceTree = ({ place }) => {
-  const childPlaces = place.childPlaces;
+/* eslint-disable react/prop-types */
+const PlaceTree = ({ id, Places, onComplete, parentId }) => {
+  const childIds = Places[id];
+  const microChild = childIds.childIds;
   return (
-    <li>
-      {place.title}
-      {childPlaces.length > 0 && (
+    <>
+      <li>
+        {childIds.title}{" "}
+        <button onClick={() => onComplete(parentId, id)}>Complete</button>
         <ol>
-          {childPlaces.map((place) => (
-            <PlaceTree key={place.id} place={place} />
-          ))}
+          {microChild.length > 0 &&
+            microChild.map((childId) => (
+              <PlaceTree
+                id={childId}
+                key={childId}
+                Places={Places}
+                parentId={id}
+                onComplete={onComplete}
+              />
+            ))}
         </ol>
-      )}
-    </li>
+      </li>
+    </>
   );
 };
 
