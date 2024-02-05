@@ -77,4 +77,8 @@ function Message({ messageColor }) {
 
 ## 3.10 - Preserving and Resetting State - Default behavior:
 
--
+- If you want to preserve the state between re-renders, the structure of your tree needs to “match up” from one render to another. If the structure is different, the state gets destroyed because React destroys state when it removes a component from the tree.
+
+## 3.11 - Resetting state at the same position - Changing Default behavior:
+
+- 
