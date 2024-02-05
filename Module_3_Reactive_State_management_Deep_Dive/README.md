@@ -70,3 +70,11 @@ function Message({ messageColor }) {
 ## 3.8 - Choosing the State Structure - Avoid deeply nested state:
 
 - **Normalization or flattening:** In programming it means organizing data in a structured and simplified way. It involves breaking down complex data structures into simpler, more manageable formats to make it easier to work with and understand.
+
+## 3.9 - Sharing State Between Components - Lifting state up:
+
+- It’s useful to consider components as **controlled**(driven by props) or **uncontrolled** (driven by state).
+
+## 3.10 - Preserving and Resetting State - Default behavior:
+
+-
