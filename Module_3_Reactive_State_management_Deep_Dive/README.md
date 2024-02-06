@@ -81,4 +81,11 @@ function Message({ messageColor }) {
 
 ## 3.11 - Resetting state at the same position - Changing Default behavior:
 
+- "To differentiate or distinguish between individual component states positioned at the same location in JSX, you can use the 'key' attribute. By assigning a unique 'key' to each component, even if they share the same position, React can identify and manage them separately. It's important to note that the 'key' attribute should not be used to enforce order; rather, it should be used to provide a unique identifier for each component. Avoid relying on the order of keys, and instead, focus on ensuring each key is unique. This approach helps React efficiently update and re-render components without relying on their order in the key attribute."
+
+- Remember that keys are not globally unique. They only specify the position within the parent.
+
+## 3.12 - Extracting State Logic into a Reducer - Example project:
+
 - 
+
