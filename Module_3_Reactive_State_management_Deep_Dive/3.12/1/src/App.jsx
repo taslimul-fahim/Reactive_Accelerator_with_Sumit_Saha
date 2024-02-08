@@ -1,11 +1,11 @@
-import { useReducer } from "react";
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
 import { initialTasks } from "./data/data";
 import taskReducer from "./reducers/taskReducer";
+import { useImmerReducer } from "use-immer";
 
 function App() {
-  const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
+    const [tasks, dispatch] = useImmerReducer(taskReducer, initialTasks);
 
   const getLastId = (data) => {
     const maxId = data.reduce((prev, curr) =>

@@ -91,8 +91,8 @@ function Message({ messageColor }) {
 
 - **Action Dispatching:** Action dispatching is refers to the process of routing user actions, such as clicking a button or deleting an item, to the appropriate code or functionality within the application. For example, when a user clicks a "Delete" button on a webpage, the action dispatching mechanism identifies this action and triggers the corresponding delete function in the backend to remove the specified item from the database.
 
-- 
+- **useReducer:** useReducer is a React hook used for managing complex state logic within components. It works by allowing you to define a reducer function that specifies how state updates should occur based on dispatched actions.
 
-## 3.14 - Comparing useState and useReducer - How to write reducers well:
+## 3.15 - Writing concise reducers with Immer:
 
 - 
