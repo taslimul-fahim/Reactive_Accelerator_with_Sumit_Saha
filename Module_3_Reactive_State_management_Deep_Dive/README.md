@@ -85,7 +85,14 @@ function Message({ messageColor }) {
 
 - Remember that keys are not globally unique. They only specify the position within the parent.
 
-## 3.12 - Extracting State Logic into a Reducer - Example project:
+## 3.13 - Three steps to Consolidate state logic with a reducer:
+
+- **Business Logic:** Business logic in a web application refers to the set of rules, processes, and calculations that define how the application operates and handles data specific to the business domain it serves. It encapsulates the functionality related to managing and processing data, enforcing business rules, and orchestrating interactions between different components of the application to achieve desired outcomes.
+
+- **Action Dispatching:** Action dispatching is refers to the process of routing user actions, such as clicking a button or deleting an item, to the appropriate code or functionality within the application. For example, when a user clicks a "Delete" button on a webpage, the action dispatching mechanism identifies this action and triggers the corresponding delete function in the backend to remove the specified item from the database.
 
 - 
 
+## 3.14 - Comparing useState and useReducer - How to write reducers well:
+
+- 
