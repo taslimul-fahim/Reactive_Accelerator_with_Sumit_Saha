@@ -93,6 +93,6 @@ function Message({ messageColor }) {
 
 - **useReducer:** useReducer is a React hook used for managing complex state logic within components. It works by allowing you to define a reducer function that specifies how state updates should occur based on dispatched actions.
 
-## 3.15 - Writing concise reducers with Immer:
+## 3.16 - Passing Data Deeply with Context - Introduction to Context API:
 
 - 
