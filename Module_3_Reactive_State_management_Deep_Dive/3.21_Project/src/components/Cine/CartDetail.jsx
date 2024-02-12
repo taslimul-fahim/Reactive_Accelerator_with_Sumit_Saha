@@ -3,10 +3,11 @@ import { MovieContext } from "../../context";
 import { getImgUrl } from "../../utils/cine_utilty";
 
 const CartDetail = ({ onClose }) => {
-  const { cartData, setCardData } = useContext(MovieContext);
+  const { cartData, setCartData } = useContext(MovieContext);
 
-  function handleRemoveCartData() {
-    
+  function handleRemoveCartData(id) {
+    const filteredData = cartData.filter((data) => data.id !== id);
+    setCartData([...filteredData]);
   }
 
   return (
@@ -17,35 +18,45 @@ const CartDetail = ({ onClose }) => {
             Your Carts
           </h2>
           <div className="space-y-8 lg:space-y-12 max-h-[450px] overflow-auto mb-10 lg:mb-14">
-            {cartData.map((data) => (
-              <div key={data.id} className="grid grid-cols-[1fr_auto] gap-4">
-                <div className="flex items-center gap-4">
-                  <img
-                    className="rounded overflow-hidden h-24"
-                    src={getImgUrl(data.cover)}
-                    alt=""
-                  />
-                  <div>
-                    <h3 className="text-base md:text-xl font-bold">
-                      {data.title}
-                    </h3>
-                    <p className="max-md:text-xs text-[#575A6E]">
-                      {data.genre}
-                    </p>
-                    <span className="max-md:text-xs">${data.price}</span>
+            {cartData.length === 0 ? (
+              <p className="text-2xl font-semibold text-lime-300">
+                The Cart is Empty.
+              </p>
+            ) : (
+              cartData.map((data) => (
+                <div key={data.id} className="grid grid-cols-[1fr_auto] gap-4">
+                  <div className="flex items-center gap-4">
+                    <img
+                      className="rounded overflow-hidden h-24"
+                      src={getImgUrl(data.cover)}
+                      alt=""
+                    />
+                    <div>
+                      <h3 className="text-base md:text-xl font-bold">
+                        {data.title}
+                      </h3>
+                      <p className="max-md:text-xs text-[#575A6E]">
+                        {data.genre}
+                      </p>
+                      <span className="max-md:text-xs">${data.price}</span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between gap-4 items-center">
+                    <button
+                      className="bg-[#D42967] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
+                      onClick={() => handleRemoveCartData(data.id)}
+                    >
+                      <img
+                        className="w-5 h-5"
+                        src="./assets/delete.svg"
+                        alt=""
+                      />
+                      <span className="max-md:hidden">Remove</span>
+                    </button>
                   </div>
                 </div>
-                <div className="flex justify-between gap-4 items-center">
-                  <button
-                    className="bg-[#D42967] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
-                    onClick={handleRemoveCartData}
-                  >
-                    <img className="w-5 h-5" src="./assets/delete.svg" alt="" />
-                    <span className="max-md:hidden">Remove</span>
-                  </button>
-                </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
           <div className="flex items-center justify-end gap-2">
             <a
