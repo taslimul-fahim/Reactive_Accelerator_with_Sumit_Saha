@@ -8,17 +8,23 @@ import { MovieContext } from "../../context";
 const MovieCard = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const { cartData, setCartData } = useContext(MovieContext);
+  const { state, dispatch } = useContext(MovieContext);
+  console.log(state)
 
   function handleAddToCart(e, movie) {
     e.stopPropagation();
 
-    const found = cartData.find((item) => {
+    const found = state.find((item) => {
       return item.id === movie.id;
     });
 
     if (!found) {
-      setCartData([...cartData, movie]);
+      dispatch({
+        type: "Add_To_Cart",
+        payload: {
+          ...movie,
+        },
+      });
     } else {
       console.error(`The Movie ${movie.title} had already added to the cart!`);
     }
@@ -51,7 +57,7 @@ const MovieCard = ({ movie }) => {
             alt={movie.title}
           />
           <figcaption className="pt-4">
-            <h3 className="text-xl mb-1 text-black">{movie.title}</h3>
+            <h3 className="text-xl mb-1 ">{movie.title}</h3>
             <p className="text-[#575A6E] text-sm mb-2">{movie.genre}</p>
             <div className="flex items-center space-x-1 mb-5">
               <Rating value={movie.rating} />

@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import Moon from "../../../public/assets/icons/moon.svg";
+import Sun from "../../../public/assets/icons/sun.svg";
 import Logo from "../../../public/assets/logo.svg";
 import Ring from "../../../public/assets/ring.svg";
 import Cart from "../../../public/assets/shopping-cart.svg";
 import CartDetail from "../Cine/CartDetail";
-import { MovieContext } from "../../context";
+import { MovieContext, ThemeContext } from "../../context";
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
-  const { cartData } = useContext(MovieContext);
-  console.log(cartData);
+  const { state } = useContext(MovieContext);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
 
   function handleHideCart() {
     setShowCart(false);
@@ -35,8 +36,9 @@ const Header = () => {
             <a
               className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
               href="#"
+              onClick={() => setDarkMode(!darkMode)}
             >
-              <img src={Moon} width="24" height="24" alt="moon" />
+              <img src={darkMode ? Sun : Moon} width="24" height="24" />
             </a>
           </li>
           <li>
@@ -46,7 +48,9 @@ const Header = () => {
               href="#"
             >
               <img src={Cart} width="24" height="24" alt="cart" />
-              {cartData.length > 0 && <span className="text-black">{cartData.length}</span>}
+              {state.length > 0 && (
+                <span className="text-black">{state.length}</span>
+              )}
             </a>
           </li>
         </ul>
