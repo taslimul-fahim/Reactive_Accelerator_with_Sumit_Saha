@@ -8,4 +8,22 @@
 
 ## 4.8_Synchronizing with Effects - How to write an Effect:
 
--  
+- Effects run after every render.
+
+- To prevent re-render by every keystroke you can add second parameter which is array like bellow :
+
+```
+useEffect(()=>{
+   // Code base
+}, [])
+```
+
+- now it will run only one time but if you want to run useEffect by dependency then put your dependency in your second params like bellow :
+
+````
+useEffect(()=>{
+    // code base
+}, [isPlaying(which is coming as a props)])```
+````
+
+- 
