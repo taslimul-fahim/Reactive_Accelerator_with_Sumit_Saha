@@ -26,6 +26,28 @@ useEffect(()=>{
 }, [isPlaying(which is coming as a props)])```
 ````
 
-## 4.9 Synchronizing with Effects - Handling effects firing twice in development:
+## 4.10 - Synchronizing with Effects - Fetching Data:
+
+- To prevent setState twice in development we have to operate like this:
+
+```
+ useEffect(() => {
+    let ignore = false;
+
+    // fetch comment here
+    async function startFetching() {
+      const json = await api(userId);
+      if (!ignore) {
+        setComments(json);
+      }
+    }
+    startFetching();
+    return () => {
+      ignore = true;
+    };
+  }, [userId]);
+```
+
+## 4.12 - You Might Not Need an Effect - Initial three examples:
 
 - 
